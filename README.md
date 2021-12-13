@@ -1,8 +1,12 @@
 # Moderation Bot By Pokémon Bot Discord
 
-Official Bot for the pokemonbot.com Discord Server written in Python using Discord.py
+Official Bot for the [Pokemon Bot](https://pokemonbot.com) Discord Server written in Python using Discord.py
 
 Though this bot is intended to be used only on the Discord Server, you can self host it in your server to test it out. Installation guide down below.
+
+## Credits
+
+Special Thanks to [Wiper-R](https://github.com/Wiper-R) for helping me to make this bot.
 
 ## Dependancies
 
@@ -35,6 +39,3 @@ Pull Requests will be accepted on this repository. To create a pull request, go 
 
 2.) Some custom blacklisted words system for auto mod.
 
-## Credits
-
-Special Thanks to [Wiper-R](https://github.com/Wiper-R) for helping me to make this bot.
