@@ -18,7 +18,7 @@ This bot requires the [Discord.py v1.7.3+ library](https://discordpy.readthedocs
 
 2. Run bot.py to start the bot!
 
-3. If you need further help then join the [support server](https://server.pokemonbot.com).
+3. If you need further help then join the [Support Server](https://server.pokemonbot.com).
 
 ## Note
 
