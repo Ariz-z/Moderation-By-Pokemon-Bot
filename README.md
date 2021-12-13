@@ -26,7 +26,7 @@ This bot requires Server Members Intent , Server Presence Intent and Message Int
 
 ## Contribution
 
-Pull Requests will be accepted on this repository. To create a pull request, go to : https://github.com/Ariz-z/Pokemon-Support/pulls. However, this repository will continue to be updated.
+Pull Requests will be accepted on this repository. To create a pull request, go to : https://github.com/Ariz-z/Moderation-By-Pokemon-Bot/pulls. However, this repository will continue to be updated.
 
 ## Changelogs
 
