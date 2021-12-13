@@ -24,6 +24,11 @@ Pull Requests will be accepted on this repository. To create a pull request, go 
 
 ## Changelogs
 
+13 December 2021:
+  1. Added Tags system,
+  2. Added mongodb database with support for tag system,
+  3. Added general commands
+
 ## Upcoming Changes
 
 1.) Auto Mod system fully function.
