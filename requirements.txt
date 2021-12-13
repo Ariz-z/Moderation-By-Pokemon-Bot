@@ -1,0 +1,6 @@
+discord.py==1.7.3
+motor==2.1.0
+dnspython
+numpy==1.19.1
+jishaku
+umongo==3.0.0b8
