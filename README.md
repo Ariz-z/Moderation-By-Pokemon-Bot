@@ -12,7 +12,7 @@ Special Thanks to [Wiper-R](https://github.com/Wiper-R) for helping me to make t
 
 This bot requires the [Discord.py v1.7.3+ library](https://discordpy.readthedocs.io/) which can be installed using pip package manager and you need to run `pip install -r requirements.txt` to install all the dependancies.
 
-## How to host the bot
+## How to host the bot and run
 
 1. Edit the config.py file as required `DISCORD_BOT_TOKEN = DISCORD_BOT_TOKEN`, `OWNERS = []`, `DATABASE_URL = DATABASE_URL`, `DATABASE_NAME = DATABASE_NAME`.
 
