@@ -18,6 +18,8 @@ This bot requires the [Discord.py v1.7.3+ library](https://discordpy.readthedocs
 
 2. Run bot.py to start the bot!
 
+3. If you need further help then join the [support server](https://server.pokemonbot.com).
+
 ## Note
 
 This bot requires Server Members Intent , Server Presence Intent and Message Intent so make sure to enable that by going to your Discord Application -> Bot -> Privilaged Gateway Intents and enabling Server Members Intent. Without this, bot won't be able to access the cache to get user names.
