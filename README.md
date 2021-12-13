@@ -14,7 +14,7 @@ This bot requires the [Discord.py v1.7.3+ library](https://discordpy.readthedocs
 
 ## How to host the bot and run
 
-1. Edit the config.py file as required `DISCORD_BOT_TOKEN = DISCORD_BOT_TOKEN`, `OWNERS = []`, `DATABASE_URL = DATABASE_URL`, `DATABASE_NAME = DATABASE_NAME`.
+1. Edit the config.py file as required `DISCORD_BOT_TOKEN = DISCORD_BOT_TOKEN`, `OWNERS = []`, `DATABASE_URL = DATABASE_URL`, `DATABASE_NAME = DATABASE_NAME` Note:- This bot is in mongodb database.
 
 2. Run bot.py to start the bot!
 
