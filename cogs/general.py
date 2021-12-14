@@ -28,10 +28,13 @@ class General(commands.Cog):
 
     @commands.command()
     async def stats(self, ctx):
+        user1 = self.bot.get_user(620898268326526976)
+        user2 = await self.bot.fetch_user(347724952100667394)
+
         embed = discord.Embed(title=f'{self.bot.user.name}', colour = discord.Color.green())
         embed.add_field(
             name="Author/Owner :writing_hand:",
-            value="`WiperR#5571`, `Ariz#0001`",
+            value=f"`{user1}`, `{user2}`",
         )
         embed.add_field(name="Default Prefix", value="`p!`")
         embed.add_field(
