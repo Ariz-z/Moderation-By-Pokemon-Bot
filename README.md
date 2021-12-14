@@ -41,3 +41,5 @@ Pull Requests will be accepted on this repository. To create a pull request, go 
 
 2.) Some custom blacklisted words system for auto mod.
 
+3.) 
+
