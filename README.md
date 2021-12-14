@@ -1,6 +1,6 @@
 # Moderation Bot By Pokémon Bot (Discord)
 
-Official Moderation Bot for [Pokemon Bot](https://pokemonbot.com) functional and based in the Discord Server (https://server.pokemonbot.com), the bot is written in Python using Discord.py
+Official Moderation Bot for [Pokemon Bot](https://pokemonbot.com) functional and based in the [Discord Server](https://server.pokemonbot.com), the bot is written in Python using Discord.py
 
 This bot is intended to be used only on Discord Servers, though one can self host it in personal servers for test and educational purposes. 
 Installation guide down below--
