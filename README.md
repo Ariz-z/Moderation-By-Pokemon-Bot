@@ -32,14 +32,22 @@ Pull Requests will be accepted on this repository. To create a pull request, go 
 
 ## Changelogs
 
+21 December 2021:
+  1. Added Moderation System,
+  2. Added Voice Blaclist System,
+  3. Added Banned Words Blaclist System,
+  4. Added Auto-Moderation System,
+  5. Added Custom Prefix System,
+  6. Fixed Some Bugs.
+
 13 December 2021:
   1. Added Tags system,
   2. Added mongodb database with support for tag system,
-  3. Added general commands
+  3. Added general commands.
 
 ## Upcoming Changes
 
-1.) Auto Mod system fully functional.
+1.) Mute system with timestamp.
 
-2.) Custom blacklisted words can be added for auto moderation.
+2.) New Help command.
 
