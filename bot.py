@@ -5,12 +5,13 @@ from helpers import context
 import config
 from helpers.decorators import CommandError
 
+intents = discord.Intents.all()
 
 class Bot(commands.Bot):
     config = config
 
     def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+        super().__init__(**kwargs, command_prefix=self.get_prefix, intents=intents)
 
         self.load_extension("jishaku")
 
@@ -83,7 +84,7 @@ class Bot(commands.Bot):
             return
 
 
-bot = Bot(command_prefix="s!", case_insensitive=True)
+bot = Bot(case_insensitive=True)
 
 
 @bot.event
@@ -93,7 +94,7 @@ async def on_ready():
     print(bot.user.name)
     print('----------------------------')
 
-cogs = ['cogs.general', 'cogs.logs', 'cogs.tags', 'cogs.mongo']
+cogs = ['cogs.general', 'cogs.logs', 'cogs.tags', 'cogs.mongo', 'cogs.settings', 'cogs.moderation', 'cogs.custom_events']
 
 for cog in cogs:
     bot.load_extension(cog)

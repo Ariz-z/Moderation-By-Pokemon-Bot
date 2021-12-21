@@ -24,7 +24,7 @@ class General(commands.Cog):
     @commands.command()
     async def ping(self, ctx):
         ping = round(self.bot.latency * 1000)
-        await ctx.send(f'Pong! The Api latency : **{ping}**ms')
+        await ctx.reply(f'Pong! The Api latency : **{ping}**ms')
 
     @commands.command()
     async def stats(self, ctx):
@@ -52,7 +52,7 @@ class General(commands.Cog):
         )
         embed.timestamp = datetime.datetime.utcnow()
         embed.set_thumbnail(url=self.bot.user.avatar_url)
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
     @commands.Cog.listener()
     async def on_message(self, message):

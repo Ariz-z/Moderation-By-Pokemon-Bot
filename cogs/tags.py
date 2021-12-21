@@ -50,17 +50,17 @@ class Tags(commands.Cog):
         if isinstance(error, TagNotFound):
             name = error.args[0]
             e = ctx.bot.warn_embed(f'Found no tag with name "{name}".')
-            return await ctx.send(embed=e)
+            return await ctx.reply(embed=e)
 
         if isinstance(error, AlreadyExisting):
             e = ctx.bot.warn_embed(
                 'A tag is already existing with this name or alias.'
             )
-            return await ctx.send(embed=e)
+            return await ctx.reply(embed=e)
 
         if isinstance(error, TagError):
             e = ctx.bot.warn_embed(error.__str__())
-            return await ctx.send(embed=e)
+            return await ctx.reply(embed=e)
 
         return await super().cog_command_error(ctx, error)
 
@@ -70,7 +70,7 @@ class Tags(commands.Cog):
         count = await self.bot.mongo.fetch_tags_count(aggregations)
         if not count:
             e = self.bot.warn_embed('This server has no tags.')
-            return await ctx.send(embed=e)
+            return await ctx.reply(embed=e)
 
         pp = 20
 
@@ -102,7 +102,7 @@ class Tags(commands.Cog):
         if not tag:
             raise TagNotFound(None, name)
         await self.bot.mongo.update_tag(tag.id, {"$inc": {"uses": 1}})
-        return await ctx.send(content=tag.description)
+        return await ctx.reply(content=tag.description)
 
 
     @tag.command(name="raw", aliases=["r"])
@@ -115,7 +115,7 @@ class Tags(commands.Cog):
         
         await self.bot.mongo.update_tag(tag.id, {"$inc": {"uses": 1}})
 
-        return await ctx.send(content=f"```{tag.description}```")
+        return await ctx.reply(content=f"```{tag.description}```")
 
     
     @tag.command(name="create", aliases=["c"])
@@ -126,7 +126,7 @@ class Tags(commands.Cog):
             raise AlreadyExisting()
         await self.bot.mongo.create_tag(name=name, description=description, owner_id=ctx.author.id, guild_id=ctx.guild.id)
         e = self.bot.success_embed(f'Created a tag with name "{name}".')
-        return await ctx.send(embed=e)
+        return await ctx.reply(embed=e)
 
     @tag.command(name="edit", aliases=["e"])
     @commands.has_guild_permissions(manage_guild=True)
@@ -147,7 +147,7 @@ class Tags(commands.Cog):
         await self.bot.mongo.update_tag(tag.id, {"$set": {"description": description}})
         await self.bot.db.tags.update_many({"alias_of": tag.id}, {'$set': {"description": description}})
         e = self.bot.success_embed("Successfully edited tag.")
-        await ctx.send(embed=e)
+        await ctx.reply(embed=e)
 
 
     @tag.command(name="alias")
@@ -168,7 +168,7 @@ class Tags(commands.Cog):
 
         e = self.bot.success_embed(
             f'Tag alias "{alias}" that points to "{tag.name}" successfully created')
-        await ctx.send(embed=e)
+        await ctx.reply(embed=e)
 
     @tag.command(name="delete")
     @commands.has_guild_permissions(manage_guild=True)
@@ -190,7 +190,7 @@ class Tags(commands.Cog):
             message = f'Tag and corresponding aliases successfully deleted.'
 
         e = self.bot.success_embed(message)
-        await ctx.send(embed=e)
+        await ctx.reply(embed=e)
 
     @tag.command(name="purge")
     @commands.has_guild_permissions(manage_guild=True)
@@ -203,16 +203,16 @@ class Tags(commands.Cog):
         prompt = await ctx.prompt(f"Are you sure want to delete {count:,} tags created by {mem}?")
 
         if prompt is None:
-            return await ctx.send("Make your mind fast.")
+            return await ctx.reply("Make your mind fast.")
 
         if not prompt:
-            return await ctx.send("Ok Aborting!")
+            return await ctx.reply("Ok Aborting!")
 
         await self.bot.db.tags.delete_many({"owner_id": mem.id, "guild_id": ctx.guild.id})
 
 
         e = self.bot.success_embed(f'Deleted {count:,} tags owned by {mem}.')
-        await ctx.send(embed=e)
+        await ctx.reply(embed=e)
 
     @tag.command(name="info")
     async def tag_info(self, ctx, *, name: TagName):
@@ -229,4 +229,4 @@ class Tags(commands.Cog):
         embed.set_footer(text="Tag Created At:")
         embed.timestamp = tag.created_at
         embed.set_thumbnail(url=owner.avatar_url)
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
