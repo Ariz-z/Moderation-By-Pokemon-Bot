@@ -5,3 +5,4 @@ numpy==1.19.1
 jishaku
 umongo==3.0.0b8
 python-dateutil==2.8.1
+parsedatetime==2.6
